@@ -1,0 +1,30 @@
+{
+    "manifest_version": 3,
+    "name": "love",
+    "version": "1.0.0",
+    "icons":{
+        "16":"love_extension.png",
+        "32":"love_extension.png",
+        "128": "love_extension.png"
+    },
+    "action": {
+        "default_popup": "popup.html"
+    },
+    "permissions": [
+        "tabs",
+        "storage",
+        "activeTab"
+    ],
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+    },
+    "content_scripts":[{
+        "matches":[
+            "http://www.instagram.com/direct/*",
+            "https://www.instagram.com/direct/*"
+        ],
+        "js":["love.js"]
+    }
+    ]
+}
